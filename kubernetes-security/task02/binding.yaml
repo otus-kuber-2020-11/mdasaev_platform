@@ -2,10 +2,16 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: task02
+<<<<<<< HEAD
   namespace: prometheus
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
+=======
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+>>>>>>> 47e4a3f (kubernetes-security)
   name: pod-reader
 subjects:
 - kind: Group

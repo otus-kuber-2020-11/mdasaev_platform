@@ -2,12 +2,22 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: task031
+<<<<<<< HEAD
   namespace: dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
+=======
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+>>>>>>> 47e4a3f (kubernetes-security)
   name: admin
 subjects:
 - kind: ServiceAccount
   name: jane
+<<<<<<< HEAD
+=======
+  namespace: dev
+>>>>>>> 47e4a3f (kubernetes-security)
   apiGroup: ""

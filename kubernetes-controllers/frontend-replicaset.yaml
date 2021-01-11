@@ -7,16 +7,16 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLabels:
-      app: frontend
+   matchLabels:
+     app: frontend
   template:
       metadata:
         labels:
           app: frontend
       spec:
         containers:
-        - name: geckoweb
-          image: maratdasaev/otus-fe:v0.0.1
+        - name: server
+          image: maratdasaev/otus-fe:v0.0.2
           env:
           - name: PORT
             value: "8080"

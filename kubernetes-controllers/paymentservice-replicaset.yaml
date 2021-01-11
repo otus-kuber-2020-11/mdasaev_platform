@@ -15,7 +15,7 @@ spec:
           app: paymentservice
       spec:
         containers:
-        - name: geckoweb
+        - name: paymentservice
           image: maratdasaev/otus-fe:v0.0.1
           env:
           - name: PORT

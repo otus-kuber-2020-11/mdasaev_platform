@@ -15,14 +15,14 @@ spec:
           app: frontend
       spec:
         containers:
-        - name: geckoweb
+        - name: frontend
           image: maratdasaev/otus-fe:v0.0.1
           ports:
            - containerPort: 8080
           readinessProbe:
             initialDelaySeconds: 10
             httpGet:
-              path: "/_healthz"
+              path: "/_health"
               port: 8080
               httpHeaders:
               - name: "Cookie"
@@ -30,7 +30,7 @@ spec:
           livenessProbe:
             initialDelaySeconds: 10
             httpGet:
-              path: "/_healthz"
+              path: "/_health"
               port: 8080
               httpHeaders:
               - name: "Cookie"

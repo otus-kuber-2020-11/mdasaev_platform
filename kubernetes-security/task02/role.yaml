@@ -1,25 +1,9 @@
 apiVersion: rbac.authorization.k8s.io/v1
-<<<<<<< HEAD
-<<<<<<< HEAD
 kind: ClusterRole
-=======
-kind: Role
->>>>>>> 47e4a3f (kubernetes-security)
-=======
-kind: ClusterRole
->>>>>>> 1b32938 (fixed role issues)
 metadata:
   namespace: prometheus
   name: pod-reader
 rules:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - apiGroups: [""]
-=======
-- apiGroups: [""] 
->>>>>>> 47e4a3f (kubernetes-security)
-=======
-- apiGroups: [""]
->>>>>>> 1b32938 (fixed role issues)
   resources: ["pods"]
   verbs: ["get", "watch", "list"]

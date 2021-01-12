@@ -28,10 +28,9 @@ rules:
 ---
 
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: task02
-  namespace: prometheus
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -40,3 +39,4 @@ subjects:
 - kind: Group
   name: system:serviceaccounts:prometheus
   apiGroup: rbac.authorization.k8s.io
+  namespace: prometheus

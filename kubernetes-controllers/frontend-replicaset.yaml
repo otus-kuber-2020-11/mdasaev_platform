@@ -16,7 +16,7 @@ spec:
       spec:
         containers:
         - name: server
-          image: maratdasaev/otus-fe:v0.0.2
+          image: maratdasaev/otus-frontend:v0.0.2
           env:
           - name: PORT
             value: "8080"

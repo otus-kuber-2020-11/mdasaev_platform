@@ -15,8 +15,8 @@ spec:
           app: frontend
       spec:
         containers:
-        - name: frontend
-          image: maratdasaev/otus-fe:v0.0.1
+        - name: server
+          image: maratdasaev/otus-frontend:v0.0.1
           ports:
            - containerPort: 8080
           readinessProbe:

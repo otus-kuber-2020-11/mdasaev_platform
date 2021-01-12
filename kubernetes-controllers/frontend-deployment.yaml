@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+      metadata:
+        labels:
+          app: frontend
+      spec:
+        containers:
+        - name: server
+          image: maratdasaev/otus-frontend:v0.0.1
+          ports:
+           - containerPort: 8080
+          readinessProbe:
+            initialDelaySeconds: 10
+            httpGet:
+              path: "/_healthz"
+              port: 8080
+              httpHeaders:
+              - name: "Cookie"
+                value: "shop_session-id=x-readiness-probe"
+          env:
+          - name: PORT
+            value: "8080"
+          - name: PRODUCT_CATALOG_SERVICE_ADDR
+            value: "productcatalogservice:3550"
+          - name: CURRENCY_SERVICE_ADDR
+            value: "currencyservice:7000"
+          - name: CART_SERVICE_ADDR
+            value: "cartservice:7070"
+          - name: RECOMMENDATION_SERVICE_ADDR
+            value: "recommendationservice:8080"
+          - name: SHIPPING_SERVICE_ADDR
+            value: "shippingservice:50051"
+          - name: CHECKOUT_SERVICE_ADDR
+            value: "checkoutservice:5050"
+          - name: AD_SERVICE_ADDR
+            value: "adservice:9555"
+          - name: ENV_PLATFORM
+            value: "gcp"
+
+
+#PS C:\WINDOWS\system32> kubectl.exe get pod
+#после изменения проб на некорректные и версии образа на 002 - все поды отвалились, но в описании ДЗ речь идет только об одном.
+
+
+#NAME                        READY   STATUS             RESTARTS   AGE
+#frontend-687b78dc9f-ncpc6   0/1     CrashLoopBackOff   5          4m30s
+#frontend-6d6666fb44-cp7hc   0/1     CrashLoopBackOff   6          8m16s
+#rontend-6d6666fb44-jvqvn   0/1     CrashLoopBackOff   7          8m16s
+#frontend-6d6666fb44-vhbtp   0/1     CrashLoopBackOff   7          8m16s

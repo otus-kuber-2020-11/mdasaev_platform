@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   name: task02
 <<<<<<< HEAD
+<<<<<<< HEAD
   namespace: prometheus
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -12,6 +13,12 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
 >>>>>>> 47e4a3f (kubernetes-security)
+=======
+  namespace: prometheus
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+>>>>>>> 1b32938 (fixed role issues)
   name: pod-reader
 subjects:
 - kind: Group

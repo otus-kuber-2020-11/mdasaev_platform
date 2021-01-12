@@ -3,11 +3,15 @@ kind: RoleBinding
 metadata:
   name: task031
 <<<<<<< HEAD
+<<<<<<< HEAD
   namespace: dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
 =======
+=======
+  namespace: dev
+>>>>>>> 1b32938 (fixed role issues)
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -17,7 +21,10 @@ subjects:
 - kind: ServiceAccount
   name: jane
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   namespace: dev
 >>>>>>> 47e4a3f (kubernetes-security)
+=======
+>>>>>>> 1b32938 (fixed role issues)
   apiGroup: ""

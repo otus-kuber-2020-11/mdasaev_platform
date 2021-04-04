@@ -13,7 +13,7 @@ local common(name) = {
           containers_: {
             common: kube.Container("common") {
               env: [{name: "PORT", value: "50051"}],
-              ports: [{containerPort: 50051}],
+              ports: [{containerPort: 50051 , name: "http"}],
               securityContext: {
                 readOnlyRootFilesystem: true,
                 runAsNonRoot: true,

@@ -1,0 +1,6 @@
+--- #Admin Account creation
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bob
+  

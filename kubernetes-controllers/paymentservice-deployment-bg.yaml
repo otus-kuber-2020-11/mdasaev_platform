@@ -1,22 +1,26 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: frontend
+  name: paymentservice
   labels:
-    app: frontend
+    app: paymentservice
 spec:
   replicas: 3
   selector:
-   matchLabels:
-     app: frontend
+    matchLabels:
+      app: paymentservice
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 0
   template:
       metadata:
         labels:
-          app: frontend
+          app: paymentservice
       spec:
         containers:
-        - name: server
-          image: maratdasaev/otus-frontend:v0.0.2
+        - name: geckoweb
+          image: maratdasaev/otus-fe:v0.0.2
           env:
           - name: PORT
             value: "8080"

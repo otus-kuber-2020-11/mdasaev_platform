@@ -15,8 +15,8 @@ spec:
           app: paymentservice
       spec:
         containers:
-        - name: geckoweb
-          image: maratdasaev/otus-fe:v0.0.2
+        - name: deployment
+          image: maratdasaev/otus-frontend:v0.0.1
           env:
           - name: PORT
             value: "8080"

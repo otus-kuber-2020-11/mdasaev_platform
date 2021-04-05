@@ -15,8 +15,8 @@ spec:
           app: frontend
       spec:
         containers:
-        - name: geckoweb
-          image: maratdasaev/otus-fe:v0.0.1
+        - name: server
+          image: maratdasaev/otus-frontend:v0.0.1
           ports:
            - containerPort: 8080
           readinessProbe:
@@ -27,14 +27,6 @@ spec:
               httpHeaders:
               - name: "Cookie"
                 value: "shop_session-id=x-readiness-probe"
-          livenessProbe:
-            initialDelaySeconds: 10
-            httpGet:
-              path: "/_healthz"
-              port: 8080
-              httpHeaders:
-              - name: "Cookie"
-                value: "shop_session-id=x-liveness-probe"
           env:
           - name: PORT
             value: "8080"

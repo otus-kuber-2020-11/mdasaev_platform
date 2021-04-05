@@ -1,0 +1,3 @@
+resources:
+- cartservice-deployment.yaml
+- cartservice-service.yaml
